@@ -1,4 +1,4 @@
-# Gentoo - Minimal Vagrant Box
+# Gentoo - VMware and VirtualBox Builds
 
 This is the most minimal stage3 installation of Gentoo (amd64, nomultilib) that
 is possible to package into a Vagrant box file. VirtualBox and VMWare versions
@@ -18,7 +18,7 @@ Packer, then:
 
     packer build -var build_type="base"  -var admin_user="$USER" -var stage3="20200916T214503Z" -var output_directory="/Users/$USER/gentoo" ./vmware.json
 
-This will chew for a bit and finally output a VMware VM.
+This will build Gentoo output a VMware VM in the root of your home directory.
 
 ## On your first boot
 
