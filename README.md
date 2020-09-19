@@ -18,7 +18,7 @@ Packer, then:
 
     packer build -var build_type="base"  -var admin_user="$USER" -var stage3="20200916T214503Z" -var output_directory="/Users/$USER/gentoo" ./vmware.json
 
-This will build Gentoo output a VMware VM in the root of your home directory.
+This will build Gentoo output a VMware VM in the root of your home directory. Your userid an password are set to your build system userid.
 
 ## On your first boot
 
