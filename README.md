@@ -11,23 +11,6 @@ guide, but avoids completing any of the optional steps.
 > **Note:** Currently the VMWare Fusion version has no vmware-tools installed,
 > but NFS mounts should work fine.
 
-## Box URL
-
-> **Vagrant Cloud:**
-> d11wtq/gentoo
-
-or
-
-> **VirtualBox:**
-> https://dl.dropboxusercontent.com/s/khura7ni0b6thx8/gentoo-amd64-stage3-virtualbox.box
-
-or
-
-> **VMWare:**
-> https://dl.dropboxusercontent.com/s/w6ncyj98a31o5jd/gentoo-amd64-stage3-vmware.box
-
-(**230MB**, Updated as new stage3 tarballs are published)
-
 ## Usage
 
 This is a [Packer](https://packer.io/) template. Install the latest version of
