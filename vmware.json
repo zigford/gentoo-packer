@@ -58,7 +58,7 @@
         "ADMIN_USER={{user `admin_user`}}"
       ],
       "scripts": [
-        "provision.sh"
+        "provision-{{user `build_type`}}.sh"
       ],
       "type": "shell"
     }
@@ -67,8 +67,8 @@
     "admin_user": "",
     "password": "packer",
     "stage3": "",
+    "build_type": "",
     "username": "root",
     "output_directory": ""
   }
 }
-
