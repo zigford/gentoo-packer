@@ -16,43 +16,9 @@ guide, but avoids completing any of the optional steps.
 This is a [Packer](https://packer.io/) template. Install the latest version of
 Packer, then:
 
-    packer build virtualbox.json
+    packer build -var build_type="base"  -var admin_user="$USER" -var stage3="20200916T214503Z" -var output_directory="/Users/$USER/gentoo" ./vmware.json
 
-This will chew for a bit and finally output a Vagrant box file.
-
-### Installation without Packer
-
-If you have Vagrant installed, you can use the scripts provided here to build a
-stage3 installation manually.
-
-The following instructions are for VirtualBox, but are easy to translate for
-VMWare.
-
-  1. Download the amd64 stage3 ISO from http://distfiles.gentoo.org/
-  2. Create a new "Gentoo64" virtual machine in VirtualBox, named "GentooBuild"
-    - Memory 1024MB
-    - Disk, 60GB dynamically allocated
-    - Everything else default (unless you know what you're doing)
-  3. Attach the downloaded ISO to the CD drive in the virtual machine settings
-  4. Boot the virtual machine using "gentoo-nofb" and the default keymap.
-  5. `wget https://github.com/d11wtq/gentoo-packer/archive/master.zip`
-    - From the livecd prompt in the VM
-  6. `unzip master.zip`
-    - From the livecd prompt in the VM
-  7. `cd gentoo-packer`
-    - From the livecd prompt in the VM
-  8. `export STAGE3=20140227`
-    - From the livecd prompt in the VM
-    - Change to whichever stage3 you want to use
-  9. `./provision.sh`
-    - From the livecd prompt in the VM
-    - This does the heavy lifting
-  10. `shutdown -hP now`
-    - From the livecd prompt in the VM
-  11. Back on the host machine, remove the ISO from the CD drive in the virtual
-      machine settings.
-  12. `vagrant package --base GentooBuild`
-    - This will emit a package.box file.
+This will chew for a bit and finally output a VMware VM.
 
 ## On your first boot
 
