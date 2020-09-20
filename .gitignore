@@ -1,4 +1,8 @@
+# Cache objects
 packer_cache/
+
+# For Vagrant boxes
 /*.box
+
 output-virtualbox-iso/
 output-vmware-iso/

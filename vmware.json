@@ -60,7 +60,7 @@
         "MARCH={{user `march`}}"
       ],
       "scripts": [
-        "provision-{{user `build_type`}}.sh"
+        "provision-{{user `build_type`}}-{{user `virt_type`}}-{{user `cpu_brand`}}.sh"
       ],
       "type": "shell"
     },
@@ -78,6 +78,8 @@
     "admin_user": "",
     "password": "packer",
     "stage3": "",
+    "virt_type": "",
+    "cpu_brand": "",
     "build_type": "",
     "make_opts": "",
     "march": "",
