@@ -55,10 +55,21 @@
         "STAGE3={{user `stage3`}}",
         "VM_TYPE=vmware",
         "SCRIPTS=/tmp",
-        "ADMIN_USER={{user `admin_user`}}"
+        "ADMIN_USER={{user `admin_user`}}",
+        "MAKE_OPTS={{user `make_opts`}}",
+        "MARCH={{user `march`}}"
       ],
       "scripts": [
         "provision-{{user `build_type`}}.sh"
+      ],
+      "type": "shell"
+    },
+    {
+      "environment_vars": [
+        "SCRIPTS=/tmp"
+      ],
+      "scripts": [
+        "provision-cleanup.sh"
       ],
       "type": "shell"
     }
@@ -68,6 +79,8 @@
     "password": "packer",
     "stage3": "",
     "build_type": "",
+    "make_opts": "",
+    "march": "",
     "username": "root",
     "output_directory": ""
   }

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [[ -z $STAGE3 ]]
 then
@@ -25,8 +25,7 @@ for script in \
   grub        \
   $VM_TYPE    \
   network     \
-  admin_user  \
-  cleanup
+  admin_user
 do
   "$SCRIPTS/scripts/$script.sh"
 done

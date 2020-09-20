@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 chroot /mnt/gentoo /bin/bash <<'EOF'
 emerge "=virtual/linux-sources-1" --autounmask-write

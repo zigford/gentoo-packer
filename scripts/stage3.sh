@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 tarball="stage3-amd64-$STAGE3.tar.xz"
 

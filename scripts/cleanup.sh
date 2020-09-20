@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 chroot /mnt/gentoo /bin/bash <<'EOF'
 cd /usr/src/linux && make clean

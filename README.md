@@ -16,7 +16,12 @@ guide, but avoids completing any of the optional steps.
 This is a [Packer](https://packer.io/) template. Install the latest version of
 Packer, then:
 
-    packer build -var build_type="base"  -var admin_user="$USER" -var stage3="20200916T214503Z" -var output_directory="/Users/$USER/gentoo" ./vmware.json
+    packer build -var march="native" \
+    -var make_opts="3" \
+    -var build_type="base"  \
+    -var admin_user="$USER" \
+    -var stage3="20200916T214503Z" \
+    -var output_directory="/Users/$USER/gentoo" ./vmware.json
 
 This will build Gentoo output a VMware VM in the root of your home directory. Your userid an password are set to your build system userid.
 

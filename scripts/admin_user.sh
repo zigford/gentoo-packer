@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 
 chroot /mnt/gentoo /bin/bash <<'EOF'
@@ -8,6 +8,7 @@ useradd -m -s /bin/bash $ADMIN_USER
 usermod -a -G adm $ADMIN_USER
 usermod -a G wheel $ADMIN_USER
 usermod -a G users $ADMIN_USER
+usermod -a G portage $ADMIN_USER
 echo $ADMIN_USER:$ADMIN_USER | chpasswd
 echo "$ADMIN_USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$ADMIN_USER
 mkdir -p ~$ADMIN_USER/.ssh
