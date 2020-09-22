@@ -21,6 +21,7 @@ Or via command line:
     -var virt_type="vmware" \
     -var march="native" \
     -var make_opts="3" \
+    -var emerge_world="false" \
     -var build_type="base"  \
     -var admin_user="$USER" \
     -var stage3="20200916T214503Z" \
