@@ -13,6 +13,7 @@ echo $ADMIN_USER:$ADMIN_USER | chpasswd
 echo "$ADMIN_USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$ADMIN_USER
 mkdir -p ~$ADMIN_USER/.ssh
 chmod 0700 ~$ADMIN_USER/.ssh
+touch ~$ADMIN_USER/.ssh/authorized_keys
 chmod 0600 ~$ADMIN_USER/.ssh/authorized_keys
 chown -R $ADMIN_USER: ~$ADMIN_USER/.ssh
 rc-update add sshd default

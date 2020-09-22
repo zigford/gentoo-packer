@@ -8,7 +8,8 @@ fi
 chmod +x $SCRIPTS/scripts/*.sh
 
 for script in \
-  cleanup
+  emerge      \
+  cleanup     
 do
   "$SCRIPTS/scripts/$script.sh"
 done
