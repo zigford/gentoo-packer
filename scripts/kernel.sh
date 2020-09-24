@@ -8,6 +8,8 @@ echo 'ACCEPT_LICENSE="*"' >> /etc/portage/make.conf
 echo "MAKEOPTS=\"-j$MAKE_OPTS\"" >> /etc/portage/make.conf
 # echo "" >> /etc/portage/make.conf
 # echo "" >> /etc/portage/make.conf
+emerge --ask app-portage/mirrorselect
+mirrorselect -s3 -b10 -D
 emerge sys-kernel/gentoo-sources
 emerge sys-kernel/genkernel
 cd /usr/src/linux

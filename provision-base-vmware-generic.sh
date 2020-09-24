@@ -23,7 +23,6 @@ for script in \
   fstab       \
   kernel      \
   grub        \
-  $VM_TYPE    \
   network     \
   admin_user
 do
