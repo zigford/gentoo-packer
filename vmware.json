@@ -28,9 +28,9 @@
       "disk_size": 60000,
       "guest_os_type": "linux",
       "headless": false,
-      "iso_checksum": "ffa89c262856bd87a04ed1552820d6b2f7ed2cd31bdbe18faa9336a0df57da91cb0debcb9fbafe09f47e27070049e45585de2d7285f76d6cbd4ed5b179bd4a7b",
+      "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "sha512",
-      "iso_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64/install-amd64-minimal-20200920T214503Z.iso",
+      "iso_url": "{{user `iso_url`}}",
       "shutdown_command": "shutdown -hP now",
       "ssh_password": "{{user `password`}}",
       "ssh_username": "{{user `username`}}",
@@ -38,8 +38,8 @@
       "type": "vmware-iso",
       "vm_name": "Gentoo",
       "vmx_data": {
-        "memsize": "1024",
-        "numvcpus": "2"
+        "memsize": "{{user `mem_size`}}",
+        "numvcpus": "{{user `num_cpus`}}"
       },
       "output_directory": "{{ user `output_directory` }}"
     }
@@ -86,6 +86,10 @@
     "march": "",
     "emerge_world": "",
     "username": "root",
-    "output_directory": ""
+    "output_directory": "",
+    "num_cpus": "",
+    "mem_size": "",
+    "iso_checksum": "",
+    "iso_url": ""
   }
 }

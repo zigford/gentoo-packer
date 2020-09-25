@@ -8,13 +8,15 @@ echo 'ACCEPT_LICENSE="*"' >> /etc/portage/make.conf
 echo "MAKEOPTS=\"-j$MAKE_OPTS\"" >> /etc/portage/make.conf
 # echo "" >> /etc/portage/make.conf
 # echo "" >> /etc/portage/make.conf
-emerge --ask app-portage/mirrorselect
+emerge --quiet-fail app-portage/mirrorselect
 mirrorselect -s3 -b10 -D
-emerge sys-kernel/gentoo-sources
+emerge --quiet-fail sys-fs/lvm2
+rc-update add lvm boot
+echo 'devices { filter=["r/cdrom/"] }' >> /etc/lvm/lvm.conf
+emerge --quiet-fail sys-kernel/gentoo-sources
 cd /usr/src/linux
 mv /tmp/kernel.config_vmware_intel .config
 make oldconfig && make prepare
 make && make modules_install
 make install
-emerge -c sys-kernel/genkernel
 EOF

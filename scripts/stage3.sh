@@ -10,6 +10,7 @@ tarball="stage3-amd64-$STAGE3.tar.xz"
 
 printf "Mounting /mnt/gentoo\n"
 mount /dev/sda5 /mnt/gentoo
+# mount /dev/os_root/vg_root /mnt/gentoo
 printf "Creating /mnt/gentoo/var\n"
 mkdir /mnt/gentoo/var
 printf "Mounting /mnt/gentoo/var\n"

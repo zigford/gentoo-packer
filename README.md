@@ -25,6 +25,8 @@ Or via command line:
     -var build_type="base"  \
     -var admin_user="$USER" \
     -var stage3="20200916T214503Z" \
+    -var iso_checksum="ffa89c262856bd87a04ed1552820d6b2f7ed2cd31bdbe18faa9336a0df57da91cb0debcb9fbafe09f47e27070049e45585de2d7285f76d6cbd4ed5b179bd4a7b" \
+    -var iso_url="http://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-20200920T214503Z.iso"
     -var output_directory="/Users/$USER/gentoo" ./vmware.json
 
 This will build Gentoo output a VMware VM in the root of your home directory. Your userid an password are set to your build system userid.

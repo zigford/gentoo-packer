@@ -4,6 +4,12 @@ chroot /mnt/gentoo /bin/bash <<'EOF'
 cd /usr/src/linux && make clean
 emerge -C sys-kernel/gentoo-sources
 emerge --depclean
+df -k
+mount -l
+pvs
+vgs
+lvs
+cat /etc/fstab
 EOF
 
 rm -rf /mnt/gentoo/usr/portage
@@ -23,7 +29,7 @@ rm -rf /mnt/gentoo/var/tmp/*
 
 # mount -o remount,ro /mnt/gentoo
 # ./zerofree /dev/sda4
-
+vgchange -an
 swapoff /dev/sda3
 dd if=/dev/zero of=/dev/sda3
 mkswap /dev/sda3
