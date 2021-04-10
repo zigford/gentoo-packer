@@ -27,7 +27,7 @@
       "boot_wait": "5s",
       "disk_size": 60000,
       "guest_os_type": "linux",
-      "headless": false,
+      "headless": true,
       "iso_checksum": "sha512:{{user `iso_checksum`}}",
       "iso_url": "{{user `iso_url`}}",
       "output_directory": "{{ user `output_directory` }}",
