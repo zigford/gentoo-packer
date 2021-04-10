@@ -28,20 +28,19 @@
       "disk_size": 60000,
       "guest_os_type": "linux",
       "headless": false,
-      "iso_checksum": "{{user `iso_checksum`}}",
-      "iso_checksum_type": "sha512",
+      "iso_checksum": "sha512:{{user `iso_checksum`}}",
       "iso_url": "{{user `iso_url`}}",
+      "output_directory": "{{ user `output_directory` }}",
       "shutdown_command": "shutdown -hP now",
       "ssh_password": "{{user `password`}}",
+      "ssh_timeout": "60s",
       "ssh_username": "{{user `username`}}",
-      "ssh_wait_timeout": "20s",
       "type": "vmware-iso",
       "vm_name": "Gentoo",
       "vmx_data": {
         "memsize": "{{user `mem_size`}}",
         "numvcpus": "{{user `num_cpus`}}"
-      },
-      "output_directory": "{{ user `output_directory` }}"
+      }
     }
   ],
   "provisioners": [
@@ -77,19 +76,20 @@
   ],
   "variables": {
     "admin_user": "",
-    "password": "packer",
-    "stage3": "",
-    "virt_type": "",
-    "cpu_brand": "",
     "build_type": "",
+    "cpu_brand": "",
+    "emerge_world": "",
+    "iso_checksum": "",
+    "iso_url": "",
     "make_opts": "",
     "march": "",
-    "emerge_world": "",
-    "username": "root",
-    "output_directory": "",
-    "num_cpus": "",
     "mem_size": "",
-    "iso_checksum": "",
-    "iso_url": ""
+    "num_cpus": "",
+    "output_directory": "",
+    "password": "Pack3r!WOW!",
+    "stage3": "",
+    "username": "root",
+    "virt_type": ""
   }
 }
+
