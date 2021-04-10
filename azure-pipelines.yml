@@ -6,8 +6,7 @@
 trigger:
 - master
 
-pool:
-  vmImage: Packer_Build
+pool: Packer_Build
 
 steps:
 - script: echo Hello, world!
