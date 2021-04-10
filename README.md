@@ -1,5 +1,7 @@
 # Gentoo - VMware and VirtualBox Builds
 
+[![Build Status](https://tymac.visualstudio.com/Packer_Build/_apis/build/status/TyMac.gentoo-packer?branchName=master)](https://tymac.visualstudio.com/Packer_Build/_build/latest?definitionId=7&branchName=master)
+
 This is a minimal VMware and VirtualBox Packer based installation of Gentoo.
 
 It is based on the official
