@@ -9,10 +9,11 @@ trigger:
 pool: Packer_Build
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: if [ -d "$(output_directory)/gentoo" ]; then rm -rf $(output_directory)/gentoo; fi
+
+  displayName: 'Clear output directory'
 
 - script: |
     ./build-vmware-base.sh $(output_directory)
     echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  displayName: 'Run Packer build'
