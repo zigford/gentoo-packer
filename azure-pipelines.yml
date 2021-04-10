@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: Packer_Build
 
 steps:
 - script: echo Hello, world!
