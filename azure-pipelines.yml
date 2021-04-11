@@ -17,7 +17,7 @@ steps:
     ./build-vmware-base.sh $(output_directory)
     echo See https://aka.ms/yaml
   displayName: 'Run Packer build'
-  timeoutInMinutes: 0
+  timeoutInMinutes: 2880
 
 schedules:
 - cron: "0 7 * * 0"
