@@ -18,3 +18,11 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run Packer build'
   timeoutInMinutes: 0
+
+schedules:
+- cron: "0 12 * * 0"
+  displayName: Weekly Sunday build
+  branches:
+    include:
+    - master
+  always: true
