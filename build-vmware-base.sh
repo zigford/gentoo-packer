@@ -37,7 +37,15 @@ if [ -z "$1" ] ; then
   -var iso_url="http://distfiles.gentoo.org/releases/amd64/autobuilds/current-install-amd64-minimal/install-amd64-minimal-$stage3.iso" \
   -var output_directory="$HOME/gentoo" ./vmware.json
 else
-   packer build -var cpu_brand="generic"       \
+  if [ -z "$1/packer_cache" ] ; then
+    mkdir $1/packer_cache
+    PACKER_CACHE_DIR="$1/packer_cache"
+    export PACKER_CACHE_DIR
+  else
+    PACKER_CACHE_DIR="$1/packer_cache"
+    export PACKER_CACHE_DIR
+  fi
+  packer build -var cpu_brand="generic"       \
   -var mem_size="4096"                        \
   -var num_cpus="4"                           \
   -var virt_type="vmware"                     \
