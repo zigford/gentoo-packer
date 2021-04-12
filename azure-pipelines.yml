@@ -1,7 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
 
 trigger:
   branches:
@@ -14,6 +10,9 @@ trigger:
 pool: Packer_Build
 
 steps:
+- checkout: self
+  clean: true
+
 - script: if [ -d "$(output_directory)/gentoo" ]; then rm -rf $(output_directory)/gentoo; fi
 
   displayName: 'Clear output directory'
