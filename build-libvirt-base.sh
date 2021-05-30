@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+init_system="${1:-openrc}"
+
 base_url="http://distfiles.gentoo.org/releases/amd64/autobuilds/"
 curl -o releases.txt $base_url/latest-stage3-amd64-systemd.txt
 stage3=$(awk -F "/" '{print $1}' releases.txt | tail -n1)
@@ -16,6 +18,7 @@ if [ -z "$1" ] ; then
   packer build -var cpu_brand="generic"       \
   -var stage3="$stage3"                       \
   -var iso_checksum="$iso_sha512"             \
+  -var init_system="$init_system"             \
   -var output_directory="$HOME/gentoo" ./libvirt.json && show_build
 else
   if [ -z "$1/packer_cache" ] ; then
@@ -29,5 +32,6 @@ else
   packer build -var cpu_brand="generic"       \
   -var stage3="$stage3"                       \
   -var iso_checksum="$iso_sha512"             \
+  -var init_system="$init_system"             \
   -var output_directory="$1/gentoo" ./libvirt.json && show_build
 fi
