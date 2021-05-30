@@ -4,10 +4,9 @@
       "boot_command": [
         "gentoo-nofb",
         "<enter>",
-        "<wait5>",
+        "<wait15>",
         "<enter>",
-        "<wait10>",
-        "<wait10>",
+        "<wait60>",
         "passwd {{user `username`}}",
         "<enter>",
         "<wait5>",
