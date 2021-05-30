@@ -37,7 +37,7 @@
   "description": "Faithful Stage 3 Gentoo Installation (Libvirt)",
   "post-processors": [
     {
-      "output": "gentoo-amd64-stage3-systemd-libvirt.box",
+      "output": "gentoo-amd64-stage3-{{user `init_system`}}-libvirt.box",
       "type": "vagrant"
     }
   ],
@@ -54,7 +54,8 @@
         "SCRIPTS=/tmp",
         "MARCH={{user `march`}}",
         "MAKE_OPTS={{user `make_opts`}}",
-        "ADMIN_USER={{user `admin_user`}}"
+        "ADMIN_USER={{user `admin_user`}}",
+	"INIT_SYSTEM={{user `init_system}}"
       ],
       "scripts": [
         "provision.sh"
@@ -78,7 +79,8 @@
     "march": "x86-64",
     "make_opts": "2",
     "admin_user": "vagrant",
-    "emerge_world": "false"
+    "emerge_world": "false",
+    "init_system": "systemd"
   }
 }
 
