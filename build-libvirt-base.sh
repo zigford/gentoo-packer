@@ -15,24 +15,9 @@ show_build() {
     $(sha256sum ./gentoo-amd64-stage3-$init_system-libvirt.box)"
 }
 
-if [ -z "$1" ] ; then
-  packer build -var cpu_brand="generic"       \
+packer build \
   -var stage3="$stage3"                       \
   -var iso_checksum="$iso_sha512"             \
   -var init_system="$init_system"             \
-  -var output_directory="$HOME/gentoo" ./libvirt.json && show_build
-else
-  if [ -z "$1/packer_cache" ] ; then
-    mkdir $1/packer_cache
-    PACKER_CACHE_DIR="$1/packer_cache"
-    export PACKER_CACHE_DIR
-  else
-    PACKER_CACHE_DIR="$1/packer_cache"
-    export PACKER_CACHE_DIR
-  fi
-  packer build -var cpu_brand="generic"       \
-  -var stage3="$stage3"                       \
-  -var iso_checksum="$iso_sha512"             \
-  -var init_system="$init_system"             \
-  -var output_directory="$1/gentoo" ./libvirt.json && show_build
-fi
+  -var output_directory="$HOME/gentoo" ./libvirt.json && show_build ||
+echo "Build failed."
