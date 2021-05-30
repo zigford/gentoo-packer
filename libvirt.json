@@ -77,7 +77,7 @@
     "password": "P@ckerP@55W0rd!",
     "username": "root",
     "march": "x86-64",
-    "make_opts": "6",
+    "make_opts": "2",
     "admin_user": "vagrant",
     "emerge_world": "false"
   }
