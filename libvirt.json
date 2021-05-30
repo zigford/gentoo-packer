@@ -24,7 +24,7 @@
       "boot_wait": "2s",
       "disk_size": "60000M",
       "headless": false,
-      "iso_checksum": "sha512:64ef6579a6f20f4082decd58b975ab224273f6c46b6d947d65bda63e75173300510fa2b8c1d22eb21e079221bb5313848c5498d80b97a17822e90b6c0987e9ec",
+      "iso_checksum": "{{ user `iso_checksum` }}",
       "iso_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3`}}/install-amd64-minimal-{{user `stage3`}}.iso",
       "shutdown_command": "shutdown -hP now",
       "ssh_password": "{{user `password`}}",
