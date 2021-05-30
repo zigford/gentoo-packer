@@ -75,7 +75,6 @@
   ],
   "variables": {
     "password": "P@ckerP@55W0rd!",
-    "stage3": "20210519T214503Z",
     "username": "root",
     "march": "x86-64",
     "make_opts": "6",
