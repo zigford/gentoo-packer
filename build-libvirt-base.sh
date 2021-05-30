@@ -11,7 +11,8 @@ curl -o digest.asc $iso_digest_url
 iso_sha512="$(awk '/# SHA512 HASH/ { getline; print $0 }' digest.asc | awk '!/CONTENTS/{print $1}' )"
 rm digest.asc
 show_build() {
-	echo "stage3 $stage3 build successfully with checksum $(sha256sum ./gentoo-amd64-stage3-systemd-libvirt.box)"
+    echo "stage3 $stage3 build successfully with checksum \
+    $(sha256sum ./gentoo-amd64-stage3-$init_system-libvirt.box)"
 }
 
 if [ -z "$1" ] ; then

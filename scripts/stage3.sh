@@ -6,7 +6,12 @@ printf "Stage3 Configuration\n"
 
 hwclock --systohc
 
-tarball="stage3-amd64-systemd-$STAGE3.tar.xz"
+if [[ "$INIT_SYSTEM" == "systemd" ]]
+then
+    tarball="stage3-amd64-systemd-$STAGE3.tar.xz"
+else
+    tarball="stage3-amd64-$STAGE3.tar.xz"
+fi
 
 printf "Mounting /mnt/gentoo\n"
 mount /dev/vda5 /mnt/gentoo

@@ -22,5 +22,7 @@ chmod 0700 /home/$ADMIN_USER/.ssh
 curl -L https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub -o /home/$ADMIN_USER/.ssh/authorized_keys
 chmod 0600 /home/$ADMIN_USER/.ssh/authorized_keys
 chown -R $ADMIN_USER: /home/$ADMIN_USER/.ssh
-systemctl enable sshd
+[[ "$INIT_SYSTEM" == "systemd" ]] &&
+    systemctl enable sshd ||
+    rc-update add sshd default
 EOF

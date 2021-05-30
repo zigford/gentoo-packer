@@ -55,7 +55,7 @@
         "MARCH={{user `march`}}",
         "MAKE_OPTS={{user `make_opts`}}",
         "ADMIN_USER={{user `admin_user`}}",
-	"INIT_SYSTEM={{user `init_system}}"
+        "INIT_SYSTEM={{user `init_system`}}"
       ],
       "scripts": [
         "provision.sh"
