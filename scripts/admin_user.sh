@@ -4,6 +4,8 @@
 chroot /mnt/gentoo /bin/bash <<'EOF'
 USE="-sendmail" emerge app-admin/sudo
 emerge net-fs/nfs-utils
+[[ "$INIT_SYSTEM" != "systemd" ]] &&
+    rc-update add rpc.statd default
 useradd -m -s /bin/bash $ADMIN_USER
 usermod -a -G adm $ADMIN_USER
 usermod -a -G wheel $ADMIN_USER
