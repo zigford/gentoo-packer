@@ -2,7 +2,6 @@
   "builders": [
     {
       "boot_command": [
-        "gentoo-nofb",
         "<enter>",
         "<wait15>",
         "<enter>",
